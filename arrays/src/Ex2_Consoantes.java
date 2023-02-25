@@ -7,37 +7,37 @@ import java.util.Scanner;
 
 public class Ex2_Consoantes {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        
-        String[] consoantes = new String[6];
-        int quantidadeConsoantes = 0;
+        try (Scanner scan = new Scanner(System.in)) {
+            String[] consoantes = new String[6];
+            int quantidadeConsoantes = 0;
 
-        int contar = 0;
-        do{
-            System.out.print("Letra: ");
-            String letra = scan.next();
+            int contar = 0;
+            do{
+                System.out.print("Letra: ");
+                String letra = scan.next();
 
-            if ( !(letra.equalsIgnoreCase("a") |
-                    letra.equalsIgnoreCase("e") |
-                    letra.equalsIgnoreCase("i") |
-                    letra.equalsIgnoreCase("o") |
-                    letra.equalsIgnoreCase("u")) ) {
-                consoantes[contar] = letra;
-                quantidadeConsoantes++;
-            } 
+                if ( !(letra.equalsIgnoreCase("a") |
+                        letra.equalsIgnoreCase("e") |
+                        letra.equalsIgnoreCase("i") |
+                        letra.equalsIgnoreCase("o") |
+                        letra.equalsIgnoreCase("u")) ) {
+                    consoantes[contar] = letra;
+                    quantidadeConsoantes++;
+                } 
 
-            contar++;
+                contar++;
 
-        }while(contar < consoantes.length);
+            }while(contar < consoantes.length);
 
-        System.out.print("Consoantes: ");
-        for (String consoante : consoantes) {
-            if (consoante != null)
-            System.out.print(consoante + " ");
+            System.out.print("Consoantes: ");
+            for (String consoante : consoantes) {
+                if (consoante != null)
+                System.out.print(consoante + " ");
+            }
+
+            System.out.println("\nQuantidade de consoantes: " + quantidadeConsoantes);
+            System.out.println("Quantidade letras no vetor: " + consoantes.length);
         }
-
-        System.out.println("\nQuantidade de consoantes: " + quantidadeConsoantes);
-        System.out.println("Quantidade letras no vetor: " + consoantes.length);
 
     }
 }
